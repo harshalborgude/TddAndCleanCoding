@@ -2,42 +2,31 @@ package org.hrb.Tdd;
 
 public class LeapYear {
 
-	public static void main(String[] args) {
+	private int year;
 
-		System.out.println("Leap Year!");
+	LeapYear(int year) {
+		this.year = year;
 	}
 
-	public static boolean isLeap(int iYear) {
+	public boolean isLeap() {
 
-		if (isDivisibleBy400(iYear)) {
+		if (isDivisibleByNum(400)) {
 			return true;
 		}
 
-		else if (isDivisibleBy100(iYear) && (!isDivisibleBy400(iYear))) {
+		else if (isDivisibleByNum(100) && (!isDivisibleByNum(400))) {
 			return false;
 		}
 
-		else if (isDivisibleBy4(iYear) && (!isDivisibleBy100(iYear))) {
+		else if (isDivisibleByNum(4) && (!isDivisibleByNum(100))) {
 			return true;
 		}
-
-//		if (isDivisibleBy400(iYear) || (isDivisibleBy4(iYear) && (!isDivisibleBy100(iYear)) ) ) {
-//			return true;
-//		}
 
 		return false;
 	}
 
-	private static boolean isDivisibleBy4(int iYear) {
-		return (iYear % 4) == 0;
-	}
-
-	private static boolean isDivisibleBy100(int iYear) {
-		return (iYear % 100) == 0;
-	}
-
-	private static boolean isDivisibleBy400(int iYear) {
-		return (iYear % 400) == 0;
+	private boolean isDivisibleByNum(int modNumber) {
+		return (this.year % modNumber) == 0;
 	}
 
 }

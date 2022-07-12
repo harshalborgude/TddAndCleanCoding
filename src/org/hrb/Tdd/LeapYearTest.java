@@ -10,10 +10,9 @@ class LeapYearTest {
 	@Test
 	void leap_divisible_by_400() {
 		int YEAR_TO_TEST=2000;
-		boolean isLeap = LeapYear.isLeap(YEAR_TO_TEST);
+		boolean isLeap = new LeapYear(YEAR_TO_TEST).isLeap();
 
 		boolean expectTrue=true;
-		// true expected , as 2000 is divisible by 400.
 		assertEquals(expectTrue, isLeap, "isLeap method have return false for 2000");
 	}
 
@@ -21,10 +20,9 @@ class LeapYearTest {
 	@Test
 	void nonLeap_divisible_by_100_not_by_400() {
 		int YEAR_TO_TEST=1800;
-		boolean isLeap = LeapYear.isLeap(YEAR_TO_TEST);
+		boolean isLeap = new LeapYear(YEAR_TO_TEST).isLeap();
 
 		boolean expectFalse=false;
-		// false expected , as 1800 is divisible by 100 but not by 400.
 		assertEquals(expectFalse, isLeap, "isLeap method have return true for 1800");
 	}
 
@@ -32,10 +30,9 @@ class LeapYearTest {
 	@Test
 	void leap_divisible_by_4_not_by_100() {
 		int YEAR_TO_TEST=2008;
-		boolean isLeap = LeapYear.isLeap(YEAR_TO_TEST);
+		boolean isLeap = new LeapYear(YEAR_TO_TEST).isLeap();
 
 		boolean expectTrue=true;
-		// true expected , as 2008 is divisible by 4 but not by 100.
 		assertEquals(expectTrue, isLeap, "isLeap method have return false for 2008");
 	}
 
@@ -43,10 +40,9 @@ class LeapYearTest {
 	@Test
 	void nonLeap_not_divisible_by_4() {
 		int YEAR_TO_TEST=2017;
-		boolean isLeap = LeapYear.isLeap(YEAR_TO_TEST);
+		boolean isLeap = new LeapYear(YEAR_TO_TEST).isLeap();
 
 		boolean expectFalse=false;
-		// false expected , as 2017 is not divisible by 4.
 		assertEquals(expectFalse, isLeap, "isLeap method have return true for 2017");
 	}
 }
